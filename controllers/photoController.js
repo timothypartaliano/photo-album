@@ -62,6 +62,21 @@ class PhotoController {
                 res.status(500).json(err)
             })
     }
+
+    static DeleteOnePhotoByID(req, res) {
+        let id = +req.params.id
+        Photo.destroy({
+            where: {
+                id
+            }
+        })
+            .then(result => {
+                res.status(200).json(result)
+            })
+            .catch(err => {
+                res.status(500).json(err)
+            })
+    }
 }
 
 module.exports = PhotoController
