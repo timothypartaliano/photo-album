@@ -6,4 +6,6 @@ router.get('/photos', PhotoController.GetAllPhotos)
 
 router.get('/photos/:id', PhotoController.GetOnePhotoByID)
 
+router.post('/photos', PhotoController.CreatePhoto)
+
 module.exports = router

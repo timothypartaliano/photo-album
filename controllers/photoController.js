@@ -21,6 +21,22 @@ class PhotoController {
                 res.status(500).json(err)
             })
     }
+
+    static CreatePhoto(req, res) {
+        const { title, caption, image_url } = req.body
+
+        Photo.create({
+            title,
+            caption,
+            image_url
+        })
+            .then(result => {
+                res.status(201).json(result)
+            })
+            .catch(err => {
+                res.status(500).json(err)
+            })
+    }
 }
 
 module.exports = PhotoController
