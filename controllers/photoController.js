@@ -1,8 +1,10 @@
-const { Photo } = require('../models')
+const { Photo, User } = require('../models')
 
 class PhotoController {
     static GetAllPhotos(req, res) {
-        Photo.findAll()
+        Photo.findAll({
+            include: User
+        })
             .then(result => {
                 res.status(200).json(result)
             })
