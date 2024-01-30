@@ -1,6 +1,14 @@
+const { Photo } = require('../models')
+
 class PhotoController {
     static GetAllPhotos(req, res) {
-        res.send('Hello World')
+        Photo.findAll()
+            .then(result => {
+                res.status(200).json(result)
+            })
+            .catch(err => {
+                res.status(500).json(err)
+            })
     }
 }
 
