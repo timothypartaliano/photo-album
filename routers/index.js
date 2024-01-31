@@ -3,7 +3,7 @@ const router = require('express').Router()
 const PhotoController = require('../controllers/photoController')
 const UserController = require('../controllers/userController')
 
-router.post('/users/register', UserController.register)
+router.post('/users/register', UserController.Register)
 router.post('/users/login', UserController.Login)
 
 router.get('/photos', PhotoController.GetAllPhotos)
