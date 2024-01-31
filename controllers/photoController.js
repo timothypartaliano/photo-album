@@ -30,7 +30,8 @@ class PhotoController {
         Photo.create({
             title,
             caption,
-            image_url
+            image_url,
+            UserId: User.id
         })
             .then(result => {
                 res.status(201).json(result)
