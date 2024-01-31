@@ -8,7 +8,8 @@ module.exports = {
     })
   },
 
-  async down (queryInterface, Sequelize) {
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.removeColumn('Users', 'password')
     /**
      * Add reverting commands here.
      *
